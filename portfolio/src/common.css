@@ -1,0 +1,126 @@
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --main-color: #fda29f;
+}
+
+.pageArea {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+}
+
+.pinkBtn {
+    display: inline-block;
+    background-image: linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%);
+    background-size: 400% 400%;
+    padding: 1.2rem 1.8rem;
+    border-radius: 2.5rem;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: #fff;
+    margin-top: 1.8rem;
+    transition: .3s;
+}
+.pinkBtn:hover {
+    background-position: right center;
+}
+
+.tlt {
+    font-weight: bold;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    color:#333;
+}
+
+.inner {
+    width: 50%;
+}
+
+.mobile {
+    display: none;
+}
+
+/* header menu navLink click event */
+.navLinkActive {
+    color:var(--main-color);
+}
+
+/* header mobile menu off */
+.mobileMenuOff span:nth-of-type(1) {
+    transform: translateY(10px) rotate(-45deg);
+}
+.mobileMenuOff span:nth-of-type(2) {
+    left: 50%;
+    opacity: 0;
+    animation: active-menu-bar05 0.8s forwards;
+}
+@keyframes active-menu-bar05 {
+    100% {
+        height: 0;
+    }
+}
+.mobileMenuOff span:nth-of-type(3) {
+    transform: translateY(-3px) rotate(45deg);
+}
+
+/* header mobile menu slide */
+.showMenu {
+    animation: mobileMenu-fadeIn .4s ease;
+}
+
+.hideMenu {
+    animation: mobileMenu-fadeOut .4s ease;
+}
+
+@keyframes mobileMenu-fadeIn {
+    0% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes mobileMenu-fadeOut {
+    0% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+/* 태블릿 */
+@media screen and (max-width: 1080px) {
+    .inner { width: 80%; }
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+    .pc { display: none; }
+    .mobile { display:block; }
+
+    .tlt { font-size: 3rem;}
+
+    .inner { width: 90%; }
+
+}
+
+@media screen and (max-width: 360px) {
+    .pinkBtn {
+        font-size: 1.4rem;
+    }
+}

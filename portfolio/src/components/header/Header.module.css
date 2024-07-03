@@ -1,0 +1,93 @@
+header { 
+    width: 100%;
+    position: fixed;
+    background-color: transparent;
+    padding:3rem 0;
+    box-sizing: border-box;
+    z-index: 99;
+}
+.headerInner {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    width:70%;
+    margin: 0 auto;
+}
+.headerInner nav ul {
+    display: flex;
+    gap: 5rem;
+}
+.headerInner nav ul li {
+    font-size: 1.6rem;
+    color: #333;
+}
+.headerInner nav ul li:hover {
+    color: var(--main-color);
+    transition: .2s;
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+    header {
+        padding: 2rem;
+        background-color:#fff;
+    }
+    .headerInner {
+        width: 100%;
+        margin:0;
+        align-items: center;
+    }
+
+    .menu,.menu span {
+        display: inline-block;
+        transition: all 0.4s;
+        box-sizing: border-box;
+    }
+    .menu {
+        width: 3rem;
+        height: 1.5rem;
+        cursor: pointer;
+        position: relative;
+    }
+    .menu span {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #000;
+        border-radius: 4px;
+    }
+    .menu span:nth-of-type(1) {
+        top: 0;
+    }
+    
+    .menu span:nth-of-type(2) {
+        top: 7px;
+    }
+    
+    .menu span:nth-of-type(3) {
+        bottom: 0;
+    }
+
+    .mobileMenu {
+        color: #565656;
+        font-size: 1.6rem;
+        font-weight: 500;
+        text-align: right;
+    }
+    .mobileMenu li {
+        margin-bottom: 2rem;
+    }
+
+    .mobileMenuWrap {
+        position: fixed;
+        background-color: #fff;
+        width: 40%;
+        height: 100vh;
+        padding: 5rem 2rem;
+        right: 0;
+        top: 5.6rem;
+    }
+
+}
+
